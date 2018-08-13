@@ -10,6 +10,11 @@ const router = new VueRouter({
   mode: 'history'
 })
 
+router.beforeEach((to, from, next) => {
+  console.log('global before each');
+  next()
+})
+
 new Vue({
   el: '#app',
   router: router,
